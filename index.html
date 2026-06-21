@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Privacidade · Agenda Pro</title>
+  <!-- Font & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..700;1,14..32,400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #f6f9fc 0%, #eef2f7 100%);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      padding: 2rem 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #1a2639;
+    }
+
+    .policy-card {
+      max-width: 1000px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 48px 48px 40px 40px;
+      box-shadow: 0 20px 60px rgba(0, 20, 40, 0.08), 0 8px 24px rgba(0, 20, 40, 0.04);
+      padding: 2.5rem 2.8rem;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Elementos gráficos personalizados (background) */
+    .policy-card::before {
+      content: "📋";
+      font-size: 14rem;
+      position: absolute;
+      right: -3rem;
+      bottom: -4rem;
+      opacity: 0.03;
+      transform: rotate(8deg);
+      pointer-events: none;
+    }
+
+    .policy-card::after {
+      content: "🔒";
+      font-size: 8rem;
+      position: absolute;
+      left: -1.5rem;
+      top: 10%;
+      opacity: 0.03;
+      transform: rotate(-12deg);
+      pointer-events: none;
+    }
+
+    /* Header com logo e selo */
+    .header-privacy {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 2.5rem;
+      border-bottom: 2px solid rgba(0, 86, 179, 0.08);
+      padding-bottom: 1.8rem;
+      position: relative;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-icon {
+      background: #0b2b4a;
+      color: white;
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 8px 16px rgba(11, 43, 74, 0.15);
+      background-image: linear-gradient(135deg, #1a3f5f, #0b2b4a);
+    }
+
+    .brand-text h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      background: linear-gradient(145deg, #0b2b4a, #1f4b6e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.1;
+    }
+
+    .brand-text .tagline {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #4a6479;
+      background: rgba(74, 100, 121, 0.08);
+      padding: 0.25rem 0.9rem;
+      border-radius: 40px;
+      display: inline-block;
+      margin-top: 0.2rem;
+      backdrop-filter: blur(4px);
+      -webkit-text-fill-color: #3a5a70;
+    }
+
+    .update-badge {
+      background: rgba(0, 186, 124, 0.10);
+      color: #0a7c5a;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid rgba(0, 186, 124, 0.15);
+      backdrop-filter: blur(4px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    }
+
+    .update-badge i {
+      font-size: 0.9rem;
+    }
+
+    /* conteúdo principal */
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    /* seções */
+    .section {
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border-radius: 28px;
+      padding: 1.8rem 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      transition: all 0.15s ease;
+    }
+
+    .section:hover {
+      background: rgba(255, 255, 255, 0.7);
+      box-shadow: 0 8px 20px rgba(0, 20, 40, 0.04);
+      border-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .section-header .icon-circle {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #eaf1fa, #d9e4ef);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: #1f4b6e;
+      flex-shrink: 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.02);
+    }
+
+    .section-header h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #0b2b4a;
+      letter-spacing: -0.3px;
+    }
+
+    .section p, .section li {
+      color: #1f334a;
+      line-height: 1.6;
+      font-size: 0.98rem;
+    }
+
+    .section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.8rem 0 0.2rem;
+    }
+
+    .section ul li {
+      padding: 0.5rem 0 0.5rem 2rem;
+      position: relative;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.02);
+    }
+
+    .section ul li:last-child {
+      border-bottom: none;
+    }
+
+    .section ul li::before {
+      content: "▹";
+      position: absolute;
+      left: 0.2rem;
+      color: #1f6e8c;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .badge-data {
+      display: inline-block;
+      background: #0b2b4a;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      margin-right: 0.4rem;
+    }
+
+    .data-grid {
+      display: grid;
+      grid-template-columns: 1fr 2.2fr;
+      gap: 0.3rem 1rem;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 18px;
+      padding: 1.2rem 1.5rem;
+      margin-top: 0.8rem;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .data-grid .label {
+      font-weight: 600;
+      color: #1a3f5f;
+    }
+
+    .data-grid .desc {
+      color: #2c4b67;
+    }
+
+    .highlight-box {
+      background: rgba(11, 43, 74, 0.03);
+      border-left: 4px solid #1f6e8c;
+      border-radius: 16px;
+      padding: 1.2rem 1.8rem;
+      margin: 1.2rem 0 0.2rem;
+      font-size: 0.95rem;
+      color: #1f3f5a;
+    }
+
+    .highlight-box i {
+      color: #1f6e8c;
+      margin-right: 0.6rem;
+    }
+
+    .perm-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2.5rem;
+      background: rgba(255, 255, 255, 0.3);
+      padding: 0.8rem 1.2rem;
+      border-radius: 60px;
+      margin: 0.8rem 0 0;
+    }
+
+    .perm-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.95rem;
+      background: white;
+      padding: 0.3rem 1rem 0.3rem 0.8rem;
+      border-radius: 40px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+
+    .perm-item i {
+      color: #1f6e8c;
+      font-size: 1.1rem;
+      width: 1.6rem;
+      text-align: center;
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, #f0f6fe, #e8eff8);
+      border-radius: 28px;
+      padding: 1.6rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid rgba(255,255,255,0.6);
+      margin-top: 0.4rem;
+    }
+
+    .contact-box .email {
+      font-weight: 600;
+      color: #0b2b4a;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .contact-box .email i {
+      background: #0b2b4a;
+      color: white;
+      padding: 0.6rem;
+      border-radius: 60px;
+      font-size: 1rem;
+      width: 2.6rem;
+      height: 2.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-box .small-note {
+      color: #3a5f7a;
+      font-size: 0.9rem;
+      font-weight: 400;
+    }
+
+    /* rodapé */
+    .footer-note {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #5b748b;
+      border-top: 1px solid rgba(0,0,0,0.04);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-note span i {
+      margin-right: 0.4rem;
+      color: #3f6b8a;
+    }
+
+    /* responsivo */
+    @media (max-width: 700px) {
+      .policy-card {
+        padding: 1.8rem 1.2rem;
+        border-radius: 32px;
+      }
+      .header-privacy {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      .data-grid {
+        grid-template-columns: 1fr;
+        gap: 0.2rem;
+      }
+      .section {
+        padding: 1.4rem 1.2rem;
+      }
+      .perm-row {
+        flex-direction: column;
+        gap: 0.5rem;
+        border-radius: 28px;
+        padding: 1rem;
+      }
+      .contact-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .brand-text h1 {
+        font-size: 1.6rem;
+      }
+      .update-badge {
+        font-size: 0.7rem;
+        padding: 0.3rem 1rem;
+      }
+      .section-header h2 {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* animação suave */
+    .section {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .section:hover {
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="policy-card">
+    <!-- cabeçalho com identidade visual -->
+    <div class="header-privacy">
+      <div class="brand">
+        <div class="brand-icon">
+          <i class="fas fa-calendar-check"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Agenda Pro</h1>
+          <span class="tagline"><i class="fas fa-shield-alt" style="margin-right:6px;"></i>privacidade & transparência</span>
+        </div>
+      </div>
+      <div class="update-badge">
+        <i class="fas fa-clock"></i>
+        <span>Última atualização: <strong>20/06/2026</strong></span>
+      </div>
+    </div>
+
+    <!-- conteúdo principal -->
+    <div class="content">
+
+      <!-- 1. Introdução -->
+      <div class="section">
+        <div class="section-header">
+          <div class="icon-circle"><i class="fas fa-lock"></i></div>
+          <h2>Compromisso com sua privacidade</h2>
+        </div>
+        <p>O aplicativo <strong>Agenda Pro</strong> respeita a sua privacidade e está comprometido com a proteção dos dados pessoais dos usuários, em conformidade com a <strong>Lei Geral de Proteção de Dados (LGPD – Lei 13.709/2018)</strong>. Esta Política descreve como coletamos, usamos, armazenamos e protegemos as informações fornecidas ou obtidas por meio do uso do aplicativo.</p>
+      </div>
+
+      <!-- 2. Dados coletados (grid) -->
+      <div class="section">
+        <div class="section-header">
+          <div class="icon-circle"><i class="fas fa-database"></i></div>
+          <h2>Dados coletados e finalidades</h2>
+        </div>
+        <p>O Agenda Pro coleta apenas os dados necessários para o funcionamento das suas funcionalidades:</p>
+        <div class="data-grid">
+          <span class="label"><i class="fas fa-user" style="margin-right:8px;"></i>Nome, telefone, categoria</span>
+          <span class="desc">Cadastrar clientes, agendar serviços, enviar lembretes e comunicar via WhatsApp.</span>
+          <span class="label"><i class="fas fa-calendar-alt"></i> Agendamento (data, hora, serviço, valor, status)</span>
+          <span class="desc">Gerenciar a agenda, emitir relatórios e enviar notificações.</span>
+          <span class="label"><i class="fas fa-address-book"></i> Contatos do dispositivo</span>
+          <span class="desc">Importar contatos da agenda do celular para agilizar o cadastro (mediante permissão).</span>
+          <span class="label"><i class="fas fa-bell"></i> Dados de uso e notificações</span>
+          <span class="desc">Enviar lembretes de compromissos e melhorar a experiência.</span>
+        </div>
+        <div class="highlight-box">
+          <i class="fas fa-shield-alt"></i> Todos os dados são armazenados <strong>exclusivamente no dispositivo do usuário</strong>, utilizando o armazenamento interno (SharedPreferences). Nenhuma informação é transmitida, armazenada ou processada em servidores externos ou na nuvem.
+        </div>
+      </div>
+
+      <!-- 3. Permissões -->
+      <div class="section">
+        <div class="section-header">
+          <div class="icon-circle"><i class="fas fa-toggle-on"></i></div>
+          <h2>Permissões solicitadas</h2>
+        </div>
+        <p>O aplicativo solicita as seguintes permissões (opcionais e com consentimento explícito):</p>
+        <div class="perm-row">
+          <span class="perm-item"><i class="fas fa-address-card"></i> Contatos</span>
+          <span class="perm-item"><i class="fas fa-bell"></i> Notificações</span>
+          <span class="perm-item"><i class="fas fa-folder-open"></i> Armazenamento</span>
+        </div>
+        <p style="margin-top:0.8rem;font-size:0.92rem;color:#2a4b69;">Todas as permissões podem ser revogadas a qualquer momento nas configurações do dispositivo.</p>
+      </div>
+
+      <!-- 4. Compartilhamento -->
+      <div class="section">
+        <div class="section-header">
+          <div class="icon-circle"><i class="fas fa-handshake"></i></div>
+          <h2>Compartilhamento de dados</h2>
+        </div>
+        <p>O Agenda Pro <strong>não compartilha, vende ou aluga</strong> seus dados pessoais com terceiros. O único compartilhamento que ocorre é:</p>
+        <ul>
+          <li><strong>WhatsApp:</strong> quando você opta por enviar uma mensagem, o aplicativo apenas abre o WhatsApp com o número e a mensagem pré-preenchida; nenhum dado é transmitido para nós.</li>
+          <li><strong>Exportação PDF:</strong> os dados são utilizados apenas para gerar o relatório localmente, sem envio para a internet.</li>
+        </ul>
+      </div>
+
+      <!-- 5. Segurança -->
+      <div class="section">
+        <div class="section-header">
+          <div class="icon-circle"><i class="fas fa-key"></i></div>
+          <h2>Segurança</h2>
+        </div>
+        <p>Adotamos medidas técnicas para proteger os dados armazenados localmente, como o uso do armazenamento seguro fornecido pelo sistema operacional. No entanto, como os dados ficam no seu dispositivo, a segurança também depende das configurações de proteção do seu celular (senha, biometria, etc.).</p>
+      </div>
+
+      <!-- 6. Direitos do titular -->
+      <div class="section">
+        <div class="section-header">
+          <div class="icon-circle"><i class="fas fa-user-check"></i></div>
+          <h2>Direitos do titular (LGPD)</h2>
+        </div>
+        <p>Você tem o direito de:</p>
+        <ul>
+          <li><strong>Acessar, corrigir ou excluir</strong> seus dados a qualquer momento dentro do aplicativo (edição/exclusão de clientes e agendamentos).</li>
+          <li><strong>Revogar permissões</strong> de contatos e notificações nas configurações do dispositivo.</li>
+          <li><strong>Solicitar a exclusão completa</strong> de todos os dados do aplicativo desinstalando-o – isso remove todos os registros locais.</li>
+        </ul>
+      </div>
+
+      <!-- 7. Crianças -->
+      <div class="section">
+        <div class="section-header">
+          <div class="icon-circle"><i class="fas fa-child"></i></div>
+          <h2>Dados de crianças e adolescentes</h2>
+        </div>
+        <p>O Agenda Pro não é direcionado a menores de 13 anos. Não coletamos intencionalmente dados de crianças.</p>
+      </div>
+
+      <!-- 8. Alterações e contato -->
+      <div class="section">
+        <div class="section-header">
+          <div class="icon-circle"><i class="fas fa-edit"></i></div>
+          <h2>Alterações nesta política</h2>
+        </div>
+        <p>Esta política pode ser atualizada ocasionalmente. A versão mais recente estará sempre disponível no aplicativo e no link fornecido.</p>
+        
+        <div class="contact-box">
+          <div class="email">
+            <i class="fas fa-envelope"></i> 
+            <span>dittigood@gmail.com</span>
+          </div>
+          <span class="small-note"><i class="fas fa-comment-dots" style="margin-right:6px;"></i>Em caso de dúvidas, entre em contato.</span>
+        </div>
+      </div>
+
+    </div> <!-- /content -->
+
+    <!-- footer -->
+    <div class="footer-note">
+      <span><i class="fas fa-check-circle"></i> LGPD · Lei 13.709/2018</span>
+      <span><i class="fas fa-mobile-alt"></i> Dados 100% locais</span>
+      <span><i class="fas fa-lock"></i> Privacidade em primeiro lugar</span>
+    </div>
+  </div>
+</body>
+</html>
